@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>ChopCloth Shop</title>
-		<link rel="stylesheet" href="stayle.css">
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>

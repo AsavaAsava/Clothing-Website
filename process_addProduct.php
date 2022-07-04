@@ -12,7 +12,6 @@ move_uploaded_file($temp_location, $product_image);
 
 $unit_price=$_POST['price'];
 $product_quantity=$_POST['productQuantity'];
-$product_subcategory=$_POST['category'];
 $product_subcategory=$_POST['subcategory'];
 
 date_default_timezone_set('Africa/Nairobi');
@@ -30,4 +29,7 @@ else {
 }
 
 mysqli_close($conn);
+
+header('Location: http://localhost/webDev_project/addProduct.php');
+exit();
 ?>

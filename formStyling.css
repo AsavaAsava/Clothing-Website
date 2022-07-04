@@ -103,9 +103,7 @@ select{
 	background-color: ghostwhite ;
 	border-radius: 8px;
 }
-body{
-		background-image:  linear-gradient(#F9F9F9, #A7BBC1);
-}
+
 textarea{
 	width: 400px;
 	height: 100px;

@@ -43,12 +43,18 @@
  	              <input type="text" name="firstname" placeholder="First Name">
                     <input type="text" name="surname" placeholder="Surname">
                     <br>
+                    <select name="gender">
+                        <option value ="" disabled selected>Choose Your Gender</option>
+                        <option value ="Male">Male</option>
+                        <option value ="Female">Female</option>
+                    </select>
+                    <br>
                     <input type="text" name="username" placeholder="Username">
                     <br>
                     <input type="email" name="email" placeholder="E-Mail Address">
                     <input type="number" name="phone" placeholder="Phone Number">
                     <br>
- 	                  <input type="password" name="password" placeholder="Password">
+ 	                <input type="password" name="password" placeholder="Password">
                     <input type="password" name="passwordConfirm" placeholder="Re-type Password">
                     <br>
                     <input type="submit" name="submit_Registration" value="Register">

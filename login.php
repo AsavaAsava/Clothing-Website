@@ -35,7 +35,7 @@
     <div class="regContainer">
         <div class ="loginForm">
             <h1>Welcome Back</h1>
-                <form action="#" method = "POST">
+                <form action="./process_login.php" method = "POST">
  	              <input type="text" name="username" placeholder="Username">
         			<br>
  	                <input type="password" name="password" placeholder="Password">
