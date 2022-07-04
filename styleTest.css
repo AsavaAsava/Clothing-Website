@@ -1,0 +1,62 @@
+input[type="submit"]:hover{
+	background-color: rgba(156, 219, 115, 1.0);
+}
+input[type="submit"]{
+	  margin: 0 30% 0 40%;
+	  width: 90px;
+	  height: 25px;
+	  text-align: center;
+}
+
+
+form {
+  width: 80%;
+  margin: 0 auto;
+  align-content: center;
+  font-family: sans-serif;
+}
+
+label,
+input {
+  display: inline-block;
+}
+
+label {
+  width: 30%;
+  text-align: right;
+}
+
+label+input {
+  width: 30%;
+  margin: 0 30% 0 4%;
+  height: 30px;
+}
+input{
+	border-radius: 8px;
+}
+ input:hover{
+ 	background-color: ghostwhite;
+ }
+
+input+input {
+  float: right;
+}
+#fname{
+	background-color: grey;
+
+}
+
+h2{
+	text-align: center;
+}
+
+p::first-letter{
+	font-size: 70px;
+}
+
+span{
+	background-color: aqua;
+}
+div > span{
+	background-color: yellow;
+}

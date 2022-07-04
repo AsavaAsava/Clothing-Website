@@ -1,0 +1,13 @@
+form input{
+	margin: 5px;
+}
+#num1{
+	margin-left: 24px;
+}
+#num2{
+	margin-left: 2px;
+}
+#calculate{
+	margin-left: 150px;
+	margin-top: 20px;
+}

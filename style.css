@@ -1,0 +1,302 @@
+header{
+	width:100%;
+}
+#trackOrderLink{
+	float: right;
+	
+}
+#quickNavBar{
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	float: right;
+	padding: 10px;
+	margin:  20px;
+
+
+}
+.navIcon{
+	width: 40px;
+	height: 40px;
+	padding: 5px;
+	margin: 5px 15px 5px 15px;
+}
+#navIconLabels span{
+	display: block;
+}
+#topNavLinks{
+	display: flex;
+	justify-content: center;
+	border-color: black;
+}
+nav a {
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: sans-serif;
+	font-size: 40px;
+	text-decoration: none;
+}
+#aboveFold{
+	width: 100%;
+	height: 600px;
+	background-image: url(./images/main_image_1.jpg);
+	background-size: 100%;
+
+}
+#callToAction{
+	float: right;
+	width: 40%;
+	height: 400px;
+	padding-top:  160px;
+	padding-bottom:  40px;
+}
+#callToAction h2{
+	margin-top: 20px;
+	font-family: monospace;
+	font-size: 60px;
+
+}
+#callToAction h4{
+	margin-bottom: 50px;
+	font-family: monospace;
+	font-size: 30px;
+	opacity: 80%;
+}
+#callToAction a{
+	display: block;
+	background-size: 100px;
+	background-color: black;
+	color: white;
+	border-radius: 10px;
+	width: 160px;
+	height: 45px;
+	font-size: 25px;
+	text-align: center;
+	text-decoration: none;
+	
+	
+}
+#brandSection{
+	width: 100%;
+	height: 300px;
+}
+#iconDisplay{
+	display: block;
+	float: left;
+	width: 50%;
+	height: 300px;
+
+	justify-content: center;
+	align-content: space-around;
+}
+#iconDisplay img{
+	width: 100px;
+	height:  100px;
+	padding: 10px 20px 10px 20px;
+	margin: 10px 20px 10px 20px;
+	
+}
+#brandCall{
+	display: block;
+	float: right;
+	width: 49%;
+	height: 300px;
+	text-align: left;
+}
+#brandCall h3{
+	font-family: monospace;
+	font-size: 50px;
+	padding: 30px 30px 30px 15px;
+	margin-top: 10px;
+}
+#brandCall h5{
+	font-family: monospace;
+	font-size: 30px;
+	padding: 15px 30px 30px 30px;
+	margin-top: 10px;
+}
+#advantageIndicator{
+	height: 300px;
+}
+#advantageIndicator div{
+	display: block;
+	height: 300px;
+	text-align: center;
+	border-style: solid;
+	border-color: black;
+}
+.advantageIndicator1{
+	float: left;
+	width: 50%;
+}
+
+.advantageIndicator2{
+	float: right;
+	width: 49%;
+}
+#advantageIndicator h3{
+	font-family: monospace;
+	font-size: 40px;
+}
+#advantageIndicator h5{
+	font-family: monospace;
+	font-size: 20px;
+}
+#advantageIndicator h3 p,#advantageIndicator h5 p{
+	margin: 5px;
+	padding: 2px;
+}
+#newArrivalsSection{
+	height: 650px;
+	text-align: center;
+}
+#newArrivalsSection h2{
+	font-family: sans-serif;
+	font-size: 40px;
+	margin: 10px 5px 5px 1px;
+}
+#quickCatalog{
+	display: flex;
+	height: 600px;
+	justify-content: center;
+}
+.itemContainer{
+	display: flex;
+	float: left;
+	width:  20%;
+	padding: 30px;
+	margin: 5px 10px 5px 10px;
+
+}
+.card {
+
+	background-color:inherit;
+	display: block;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.549);
+  	width: 100% ;
+  	text-align: left;
+  	font-family: arial;
+	border-radius: 3px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.card img{
+	width:100%;
+}
+#viewMoreButton{
+	justify-content: space-around;
+	padding: 200px 20px 5px 20px;
+}
+#viewMoreButton a img{
+	width: 40px;
+	height: 40px;
+
+}
+#viewMoreButton p{
+	font-family: sans-serif;
+}
+.reviewsSection{
+	width: 100%;
+	height: 500px;
+	font-family: sans-serif;
+}
+.reviewsSection h2{
+	text-align: center;
+	font-size: 40px;
+}
+.reviewCard{
+	display: flex;
+	width: 50%;
+	height: 300px;
+	float: left;
+	border-style: solid;
+	border-color: black;
+	border-radius: 4px ;
+}
+.reviewCard2{
+	display: flex;
+	width: 49%;
+	height: 300px;
+	float: right;
+	border-style: solid;
+	border-color: black;
+	border-radius: 4px ;
+}
+.reviewCard img, .reviewCard2 img{
+	width: 50%;
+	display: flex;
+	float: left;
+}
+.TextArea{
+	text-align: left;
+	width: 50%;
+	float: right;
+	font-family: sans-serif;
+}
+.TextArea h1{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+#BottomLinks{
+	width: 100%;
+	height: 300px;
+	display: flex;
+}
+#BottomLinks div{
+	float: left;
+	width: 20%;
+	justify-content: center;
+	align-content: space-around;
+	margin: 10px 30px 10px 30px;
+}
+#BottomLinks div h1{
+	font-family: sans-serif;
+	font-size: 30px;
+}
+#BottomLinks div ul{
+	font-family: sans-serif;
+	font-size: 20px;
+	list-style-type: none;
+}
+main{
+	width:100%;
+	height: 100%;
+}
+section{
+	width:100%;
+	height: 120px;
+}
+footer{
+	width:100%;
+	height: 100%;
+	text-align: center;
+}
+footer a{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+body{
+		background-image:  linear-gradient(#F9F9F9, #A7BBC1);
+}
+
+

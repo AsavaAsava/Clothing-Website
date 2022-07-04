@@ -1,0 +1,121 @@
+@import "style.css";
+
+.mainContainer{
+	width: 100%;
+	align-content: center;
+	display: flex;
+	justify-content: center;
+}
+.mainForm{
+	width: 50%;
+	box-shadow: 4px 8px 13px 3px  #888888;
+	font-family: sans-serif;
+	margin: 50px;
+	padding: 60px;
+	background-color: white;
+}
+.loginForm{
+	width: 50%;
+	box-shadow: 4px 8px 13px 3px  #888888;
+	font-family: sans-serif;
+	margin: 50px;
+	padding: 60px;
+	background-color: white;
+}
+.mainForm input{
+	font-family: sans-serif;
+	width: 250px;
+	height: 30px;
+	margin: 20px;
+	border-style: none;
+	border-bottom: 1px solid #AAA;;
+}
+select{
+	font-family: sans-serif;
+	width: 250px;
+	height: 30px;
+	margin: 20px;
+	border-style: none;
+	border-bottom: 1px solid #AAA;;
+}
+.mainForm [type="submit"]{
+	background-color: whitesmoke ;
+	border-radius: 8px;
+	width: 150px;
+	height: 30px;
+}
+.mainForm [type="submit"]:hover{
+	background-color: ghostwhite ;
+	border-radius: 8px;
+}
+.mainForm h1{
+	text-align: center;
+}
+.loginForm input{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	font-family: sans-serif;
+	width: 250px;
+	height: 30px;
+	margin: 20px;
+	border-style: none;
+	border-bottom: 1px solid #AAA;
+	
+}
+.mainCatContainer{
+	width: 100%;
+	align-content: center;
+	display: flex;
+	justify-content: center;
+}
+.mainCatForm{
+	width: 50%;
+	height: 400px;
+	box-shadow: 4px 8px 13px 3px  #888888;
+	font-family: sans-serif;
+	text-align: center;
+	margin: 50px 50px 40px 50px ;
+	padding: 60px;
+	background-color: white;
+	border-radius: 6px;
+
+
+}
+.mainCatForm :before{
+		filter: blur(1px);
+}
+.mainCatForm input{
+	font-family: sans-serif;
+	width: 250px;
+	height: 30px;
+	margin: 20px;
+	border-style: none;
+	border-bottom: 1px solid #AAA;;
+}
+.mainCatForm [type="submit"]{
+	background-color: whitesmoke ;
+	border-radius: 8px;
+	width: 150px;
+	height: 30px;
+}
+.mainCatForm [type="submit"]:hover{
+	background-color: ghostwhite ;
+	border-radius: 8px;
+}
+body{
+		background-image:  linear-gradient(#F9F9F9, #A7BBC1);
+}
+textarea{
+	width: 400px;
+	height: 100px;
+	margin: 20px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+table, th, td {
+  border: 1px solid;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin -Add Product</title>
+    <link rel="stylesheet" href="formStyling.css">
+</head>
+<body>
+    <header>
+        <img id="mainIcon" src="./images/chopIcon.png">
+    </header>
+
+    <div class="mainCatContainer">
+        <div class ="mainForm">
+            <h1>Add Product</h1>
+                <form action="./process_addProduct.php" method = "POST">
+                    <label for="prodName">Product Name:</label>
+                    <br>
+                    <input type="text" name="productName" id="prodName" placeholder="Enter Product Name">
+                    <br>
+                    <label for="prodDesc">Product Description:</label>
+                    <br>
+                    <textarea name="product_description" id ="prodDesc "placeholder="Enter Description Here"></textarea>
+                    <br>
+                    <label for="prodImage">Product Images:</label>
+                    <br>
+                    <input type="file" name="productImage" id="prodImg" placeholder="Select Product Image">
+                    <br>
+                    <label for="prodPrice">Unit Price:</label>
+                    <br>
+                    <input type="number" name="price"  id="prodPrice" placeholder="Price">
+                    <br>
+                    <label for="prodQuantity">Product Quantity:</label>
+                    <br>
+                    <input type="number" name="productQuantity" id="prodQuantity" placeholder="0">
+                    <br>
+                    <label for="subCatName"> Select Sub-Category</label>
+                    <br>
+                    <select name="subcategory" id="subCatName">
+                        <optgroup label="Men">
+                            <option value="2">Male - Formal</option>
+                            <option value="3">Male - Casual</option>  
+                            <option value="4">Male - Sports</option>  
+                        </optgroup>
+                        <optgroup label="Women">
+                            <option value="5">Women - Formal</option>
+                            <option value="6">Women - Casual</option>  
+                            <option value="7">Women - Sports</option>  
+                        </optgroup>
+                        <optgroup label="Children">
+                            <option value="5">Children - Formal</option>
+                            <option value="6">Children - Casual</option>  
+                            <option value="7">Children - Sports</option>  
+                        </optgroup>                      
+                    </select>
+                    <br>
+                    <input type="submit" name="submit_product" value="Submit">
+                </form>    
+        </div>
+    </div>
+</body>
+</html>
