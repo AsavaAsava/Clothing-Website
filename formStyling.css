@@ -116,4 +116,9 @@ input::-webkit-inner-spin-button {
 }
 table, th, td {
   border: 1px solid;
+  width: 70px;
 }
+th, td {
+	border: 1px solid;
+	width: 70px;
+  }

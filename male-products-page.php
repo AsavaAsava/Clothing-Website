@@ -1,5 +1,6 @@
 <?php 
 require_once("get-male-products.php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,13 +34,16 @@ require_once("get-male-products.php");
 		<?php
 		while($row = mysqli_fetch_assoc($result)){
 
-	echo("<div class=\"itemContainer\"><div class=\"card\">");
-				
+					echo("<div class=\"itemContainer\"><div class=\"card\">");
+					echo("<form action=\"./process_cart.php\" method = \"POST\">");
   					echo("<img src=\"".$row["product_image"]."\">");
+					echo("<input type=\"text\" name=\"user_id\" value=\"".$_SESSION['user_id']."\" hidden>");
+					echo("<input type=\"text\" name=\"product\" value=\"".$row["product_id"]."\" hidden>");
   					echo("<h1>".$row["product_name"]."</h1>");
   					echo("<p class=\"price\">Ksh.".$row["unit_price"]."</p>");
   					echo("<p>".$row["product_description"]."</p>");
-  					echo("<p><button>Add to Cart</button></p></div></div>");
+  					echo("<p><input type=\"submit\" name=\"submit_Cart\" value=\"Add To Cart\"></p>");
+					echo("</form></div></div>");
 				
 			
 }

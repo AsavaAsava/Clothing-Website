@@ -22,12 +22,18 @@
  		<div class="option" id="opt2">
  			
  		</div>
- 		<br>
+ 		
  		<div class="option" id="opt3">
  			
  		</div>
  		
  		<div class="option" id="opt4">
+ 			
+ 		</div>
+		<div class="option" id="opt5">
+ 			
+		</div>
+		<div class="option" id="opt6">
  			
  		</div>
  		<div id="foot"></div>
