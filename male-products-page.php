@@ -1,6 +1,7 @@
 <?php 
 require_once("get-male-products.php");
 session_start();
+$_SESSION['current_page'] = "male-products-page";
 ?>
 <!DOCTYPE html>
 <html>

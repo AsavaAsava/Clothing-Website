@@ -1,3 +1,9 @@
+<?php
+ session_start();
+ if(!$_SESSION['user_id']){$_SESSION['user_id'] = "default";}
+ require_once("get-male-products.php");
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,7 +21,7 @@
 
 			<div id="quickNavBar">
 				<a href="./index.html"><img class="navIcon" src="./icons/wishlist.png"></a>
-				<a href="./index.html"><img class="navIcon" src="./icons/cart.png" ></a>
+				<a href="./cart.php"><img class="navIcon" src="./icons/cart.png" ></a>
 				<a href="./login.php"><img class="navIcon" src="./icons/user.png" ></a>
 				<!--<div id="navIconLabels">
 					<span>Wishlist</span>
@@ -25,10 +31,10 @@
 			</div>
 
 			<nav id="topNavLinks">
-				<a href="./index.html">Home</a>
-				<a href="./index.html">Men</a>
-				<a href="./index.html">Women</a>
-				<a href="./index.html">Kids</a>
+				<a href="./index.php">Home</a>
+				<a href="./male-products-page.php">Men</a>
+				<a href="./female-products-page.php">Women</a>
+				<a href="./kids-products-page.php">Kids</a>
 				<a href="./index.html">Offers</a>
 			</nav>
 		</header>
@@ -40,7 +46,7 @@
 				<div id="callToAction">
 					<h2>Clothes for awesome people</h2>
 					<h4>Get your new outfit today!</h4>
-					<a href="#">Shop Now</a>
+					<a href="./male-products-page.php">Shop Now</a>
 				</div>
 			</section>
 
@@ -89,34 +95,26 @@
 				<div id="quickCatalog">
 
 
-				<div class="itemContainer">
-				<div class="card">
-  					<img src="./images/dress.jpg" alt="Denim Jacket" >
-  					<h1>Tailored Jacket</h1>
-  					<p class="price">Ksh. 1000.00</p>
-  					<p>Quality not so generic jacket</p>
-  					<p><button>Add to Cart</button></p>
-				</div>
+				<?php
+				$count = 0;
+		while($row = mysqli_fetch_assoc($result)){
 
-				</div>
-				<div class="itemContainer">
-				<div class="card">
-  					<img src="./images/dress.jpg" alt="Evening Dress">
-  					<h1>Evening Dress</h1>
-  					<p class="price">Ksh. 1000.00</p>
-  					<p>Lime coloured dress</p>
-  					<p><button>Add to Cart</button></p>
-				</div>
-			</div>
-			<div class="itemContainer">
-				<div class="card">
-  					<img src="./images/dress.jpg" alt="Denim Jeans">
-  					<h1>Tailored Jeans</h1>
-  					<p class="price">Ksh. 1000.00</p>
-  					<p>Denim Jeans!</p>
-  					<p><button>Add to Cart</button></p>
-				</div>
-			</div>
+					echo("<div class=\"itemContainer\"><div class=\"card\">");
+					echo("<form action=\"./process_cart.php\" method = \"POST\">");
+  					echo("<img src=\"".$row["product_image"]."\">");
+					echo("<input type=\"text\" name=\"user_id\" value=\"".$_SESSION['user_id']."\" hidden>");
+					echo("<input type=\"text\" name=\"product\" value=\"".$row["product_id"]."\" hidden>");
+  					echo("<h1>".$row["product_name"]."</h1>");
+  					echo("<p class=\"price\">Ksh.".$row["unit_price"]."</p>");
+  					echo("<p>".$row["product_description"]."</p>");
+  					echo("<p><input type=\"submit\" name=\"submit_Cart\" value=\"Add To Cart\"></p>");
+					echo("</form></div></div>");
+					$count++;
+					if($count == 3){break;}
+					}		
+
+		?>
+
 			<div id="viewMoreButton">
 				<a href="#"><img src="./icons/arrow-right.png"></a>
 				<p>View More</p>

@@ -36,7 +36,11 @@ require_once("get_Products.php");
             	echo "<td>". $row["product_description"]."</td>";
             	echo "<td>". $row["unit_price"]."</td>";
                 echo "<td>". $row["available_quantity"]."</td>";
-            	echo "<td> <a href=\"#\"> edit </a> </td>";
+            	echo "<td> <form action=\"editProduct.php\" method=\"post\">
+				<input type=\"number\" name=\"product\" value=\"".$row["product_id"]."\" hidden>
+				<input type=\"submit\" value=\"Edit\">
+				</form> </td>";
+            	echo "</tr>";
             	echo "</tr>";
             	}
             ?>

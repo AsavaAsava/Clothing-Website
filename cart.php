@@ -1,9 +1,22 @@
 <?php 
 require("connect.php");
-
-$sql = "SELECT * FROM tbl_cart WHERE u_id = ".$_SESSION["user_id"];
-
+session_start();
+if($_SESSION['user_id']== "default"){
+	echo "<script type='text/javascript'>alert('Please Log In to Access Cart')</script>";
+	header('Location: http://localhost/webDev_project/login.php');
+	exit();
+ }
+$sql = "SELECT entryNo,u_id,product_name,product_image,unit_price FROM tbl_cart JOIN tbl_product WHERE tbl_cart.product_id = tbl_product.product_id;";
+$userCart = [];
 $result = mysqli_query($conn,$sql);
+$subtotal = 0;
+while($row = mysqli_fetch_assoc($result)){
+	if ($row['u_id'] == $_SESSION['user_id']){
+		array_push($userCart, $row);
+	}
+
+		
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +56,7 @@ $result = mysqli_query($conn,$sql);
         <div class ="mainCatForm">
             <h1>Cart</h1>
             <table class="cartTable">
-            	<thead colspa>
+            	<thead>
                     <th>Product Image</th>
             		<th>Product Name</th>
             		<th>Unit Price</th>
@@ -52,20 +65,24 @@ $result = mysqli_query($conn,$sql);
             	</thead>
             	<tbody>
             <?php
-            while($row = mysqli_fetch_assoc($result)){
-
+            foreach($userCart as $value){
             	echo "<tr>";
-            	echo "<td> <img src= \"". $row["product_image"]."\"width=\"50\" height=\"60\"></td>";
-            	echo "<td>". $row["product_name"]."</td>";
-            	echo "<td>". $row["unit_price"]."</td>";
-                echo "<td>". "<input type=\"number\" name=\"quantity\" value=\"1\">"."</td>";
-            	echo "<td> <a href=\"#\"> remove </a> </td>";
+            	echo "<td> <img src= \"". $value["product_image"]."\"width=\"100\" height=\"90\"></td>";
+            	echo "<td>". $value["product_name"]."</td>";
+            	echo "<td>". $value["unit_price"]."</td>";
+                echo "<td>". "<input class=\"cart-num\" type=\"number\" name=\"quantity\" value=\"1\">"."</td>";
+            	echo "<td> <form action=\"removeFromCart.php\" method=\"post\">
+				<input type=\"number\" name=\"entry\" value=\"".$value["entryNo"]."\" hidden>
+				<input type=\"submit\" value=\"Remove\">
+				</form> </td>";
             	echo "</tr>";
+				$subtotal += $value["unit_price"];
             	}
             ?>
             </tbody>
             </table>
-            <button>Place Order</button>
+			<span id="cart-subtotal">Subtotal:<?php echo $subtotal;?><span><br>
+            <button id="cart-order">Place Order</button>
         </div>
     </div>
 </body>

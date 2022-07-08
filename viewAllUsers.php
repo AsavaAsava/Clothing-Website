@@ -34,7 +34,10 @@ require_once("get_userData.php");
             	echo "<td>". $row["firstname"]."</td>";
             	echo "<td>". $row["surname"]."</td>";
             	echo "<td>". $row["email"]."</td>";
-            	echo "<td> <a href=\"#\"> edit </a> </td>";
+            	echo "<td> <form action=\"editUser.php\" method=\"post\">
+				<input type=\"number\" name=\"user\" value=\"".$row["user_id"]."\" hidden>
+				<input type=\"submit\" value=\"Edit\">
+				</form> </td>";
             	echo "</tr>";
             	}
             ?>

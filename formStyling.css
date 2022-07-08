@@ -71,7 +71,8 @@ select{
 }
 .mainCatForm{
 	width: 50%;
-	height: 400px;
+	min-height: 400px;
+	height: 100%;
 	box-shadow: 4px 8px 13px 3px  #888888;
 	font-family: sans-serif;
 	text-align: center;
@@ -121,4 +122,28 @@ table, th, td {
 th, td {
 	border: 1px solid;
 	width: 70px;
-  }
+}
+
+ .cart-num::-webkit-inner-spin-button, .cart-num::-webkit-outer-spin-button{
+   opacity: 1;
+
+}
+.cart-num{
+	width: 50px;
+}
+.cart-order{
+	margin: 20px;
+	border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.cart-subtotal{
+	font-size: 30px;
+	margin: 20px;
+}

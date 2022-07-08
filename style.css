@@ -282,7 +282,6 @@ nav a {
 }
 main{
 	width:100%;
-	height: 100%;
 }
 section{
 	width:100%;
@@ -297,9 +296,8 @@ footer a{
 	margin-left: 20px;
 	margin-right: 20px;
 }
-body{
+html{
 		background-image:  linear-gradient(#F9F9F9, #A7BBC1);
-		height: 100%;
 }
 #mainArea{
 	height: 40em;
