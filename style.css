@@ -325,5 +325,8 @@ html{
 	height: 20%;
 	box-shadow: 4px 8px 13px 3px  #888888;
 }
-
+.username{
+	font-size: large;
+	margin: 20px 20px 3px 5px;
+}
 

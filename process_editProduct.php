@@ -17,7 +17,7 @@ $product_subcategory=$_POST['subcategory'];
 date_default_timezone_set('Africa/Nairobi');
 $date_updated= date('Y-m-d H:i:s');
 
-$sql ="UPDATE [IGNORE] tbl_product 
+$sql ="UPDATE tbl_product 
             SET product_name = '$product_name',
                 product_description = '$product_description',
                 product_image = '$product_image',

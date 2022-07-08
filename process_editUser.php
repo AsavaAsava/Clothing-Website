@@ -10,7 +10,7 @@ $gender=$_POST["gender"];
 $role = $_POST["role"];
 
 
-$sql = "UPDATE [IGNORE]  tbl_users 
+$sql = "UPDATE tbl_users 
             SET first_name = '$first_name',
                 last_name = '$surname',
                 username = '$username',

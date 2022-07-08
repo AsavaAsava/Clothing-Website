@@ -6,7 +6,7 @@ if($_SESSION['user_id']== "default"){
 	header('Location: http://localhost/webDev_project/login.php');
 	exit();
  }
-$sql = "SELECT entryNo,u_id,product_name,product_image,unit_price FROM tbl_cart JOIN tbl_product WHERE tbl_cart.product_id = tbl_product.product_id;";
+$sql = "SELECT entryNo,u_id,tbl_product.product_id,product_name,product_image,unit_price FROM tbl_cart JOIN tbl_product WHERE tbl_cart.product_id = tbl_product.product_id;";
 $userCart = [];
 $result = mysqli_query($conn,$sql);
 $subtotal = 0;
@@ -17,6 +17,7 @@ while($row = mysqli_fetch_assoc($result)){
 
 		
 	}
+	$_SESSION['orderItems'] = $userCart;
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,7 +83,10 @@ while($row = mysqli_fetch_assoc($result)){
             </tbody>
             </table>
 			<span id="cart-subtotal">Subtotal:<?php echo $subtotal;?><span><br>
-            <button id="cart-order">Place Order</button>
+			<form action="submitOrder.php" method="post">
+				<input type="number" name="uid" value="<?php echo $_SESSION['user_id']?>" hidden>
+				<input type="submit" value="Place Order">
+			</form>
         </div>
     </div>
 </body>
