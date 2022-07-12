@@ -5,6 +5,7 @@ print_r($_POST);
 $uid = $_SESSION['user_id'];
 $cartItems = $_SESSION['orderItems'];
 $date_created= date('Y-m-d H:i:s');
+$quantity = $_POST['quantity'];
 
 $createOrder = "INSERT INTO  orders (user_id,order_date) VALUES ('$uid','$date_created')";
 mysqli_query($conn,$createOrder);
@@ -20,4 +21,6 @@ foreach($cartItems as $item){
 }
 
 echo("Order Successful");
+
+
 ?>
