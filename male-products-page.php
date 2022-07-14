@@ -19,17 +19,24 @@ $_SESSION['current_page'] = "male-products-page";
 		</div>
 
 			<div id="quickNavBar">
-				<a href="./index.html"><img class="navIcon" src="./icons/wishlist.png"></a>
-				<a href="./index.html"><img class="navIcon" src="./icons/cart.png" href="./registration.html"></a>
-				<a href="./login.php"><img class="navIcon" src="./icons/user.png" href="./registration.html"></a>
+				<a href="./cart.php"><img class="navIcon" src="./icons/cart.png" ></a>
+				<a href="./viewPreviousOrders.php"><img class="navIcon" src="./icons/shopping-bag.png"></a>
+				<a href="./login.php"><img class="navIcon" src="./icons/user.png" ></a> 
+				<span class="username">
+					<?php
+						error_reporting(E_ALL ^ E_WARNING);
+						echo($_SESSION['username']);
+					
+				?>
+				</span>
+				
 			</div>
 
 			<nav id="topNavLinks">
-				<a href="./index.html">Home</a>
-				<a href="./index.html">Men</a>
-				<a href="./index.html">Women</a>
-				<a href="./index.html">Kids</a>
-				<a href="./index.html">Offers</a>
+				<a href="./index.php">Home</a>
+				<a href="./male-products-page.php">Men</a>
+				<a href="./female-products-page.php">Women</a>
+				<a href="./kids-products-page.php">Kids</a>
 			</nav>
 		</header>
 		<?php

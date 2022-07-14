@@ -17,9 +17,9 @@
         </div>
 
             <div id="quickNavBar">
-                <a href="./index.php"><img class="navIcon" src="./icons/wishlist.png"></a>
-                <a href="./index.php"><img class="navIcon" src="./icons/cart.png" href="./registration.html"></a>
-                <a href="./index.php"><img class="navIcon" src="./icons/user.png" href="./registration.html"></a>
+                <a href="./index.html"><img class="navIcon" src="./icons/wishlist.png"></a>
+				<a href="./cart.php"><img class="navIcon" src="./icons/cart.png" ></a>
+				<a href="./login.php"><img class="navIcon" src="./icons/user.png" ></a>
                 <!--<div id="navIconLabels">
                     <span>Wishlist</span>
                     <span>Cart</span>

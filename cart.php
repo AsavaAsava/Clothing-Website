@@ -21,12 +21,13 @@ while($row = mysqli_fetch_assoc($result)){
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title>All Products</title>
-	<link rel="stylesheet" href="formstyling.css">
-</head>
-<body>
-<header>
+	<head>
+		<title>ChopCloth Shop</title>
+		<link rel="stylesheet" href="formStyling.css">
+	</head>
+
+	<body>
+		<header>
 			<img id="mainIcon" src="./images/chopIcon.png">
 
 			<div id="trackOrderLink">
@@ -34,22 +35,24 @@ while($row = mysqli_fetch_assoc($result)){
 		</div>
 
 			<div id="quickNavBar">
-				<a href="./index.html"><img class="navIcon" src="./icons/wishlist.png"></a>
-				<a href="./index.html"><img class="navIcon" src="./icons/cart.png" ></a>
-				<a href="./login.php"><img class="navIcon" src="./icons/user.png" ></a>
-				<!--<div id="navIconLabels">
-					<span>Wishlist</span>
-					<span>Cart</span>
-					<span>User</span>
-				</div>-->
+				<a href="./cart.php"><img class="navIcon" src="./icons/cart.png" ></a>
+				<a href="./viewPreviousOrders.php"><img class="navIcon" src="./icons/shopping-bag.png"></a>
+				<a href="./login.php"><img class="navIcon" src="./icons/user.png" ></a> 
+				<span class="username">
+					<?php
+						error_reporting(E_ALL ^ E_WARNING);
+						echo($_SESSION['username']);
+					
+				?>
+				</span>
+				
 			</div>
 
 			<nav id="topNavLinks">
-				<a href="./index.html">Home</a>
-				<a href="./index.html">Men</a>
-				<a href="./index.html">Women</a>
-				<a href="./index.html">Kids</a>
-				<a href="./index.html">Offers</a>
+				<a href="./index.php">Home</a>
+				<a href="./male-products-page.php">Men</a>
+				<a href="./female-products-page.php">Women</a>
+				<a href="./kids-products-page.php">Kids</a>
 			</nav>
 		</header>
 

@@ -17,24 +17,38 @@
  	</div>
  	<div id="optionsArea">
  		<div class="option" id="opt1">
- 			<span><a href="./viewAllUsers.php">View Users</a></span>
+ 			<span><a href="./viewAllUsers.php"><img class="navIcon" src="./icons/group.png" width="100" height="100" ></a></span><br>
+			 <span>View All Users</span>
  		</div>
  		<div class="option" id="opt2">
-		 <span><a href="./viewAllProducts.php">View Products</a></span>
+		 <span><a href="./viewAllProducts.php"><img class="navIcon" src="./icons/clothing.png" width="100" height="100" ></a></span><br>
+			 <span>All Products</span>
  		</div>
  		
  		<div class="option" id="opt3">
-		 <span><a href="./addCategory.php">Add Category</a></span>
+		 <span><a href="./addCategory.php"><img class="navIcon" src="./icons/playlist.png" width="100" height="100" ></a></span><br>
+			 <span>Add Category</span>
  		</div>
  		
  		<div class="option" id="opt4">
-		 <span><a href="./addSubCategory.php">Add Subcategory</a></span>
+		 <span><a href="./addSubCategory.php"><img class="navIcon" src="./icons/clipboard.png" width="100" height="100" ></a></span><br>
+			 <span>Add Sub-Category</span>
  		</div>
 		<div class="option" id="opt5">
-		<span><a href="./addProduct.php">Add Products</a></span>
+		<span><a href="./addProduct.php"><img class="navIcon" src="./icons/plus.png" width="100" height="100" ></a></span><br>
+			 <span>Add Product</span>
 		</div>
 		<div class="option" id="opt6">
-		<span><a href="#">View Orders</a></span>
+		<span><a href="./viewAllOrders.php"><img class="navIcon" src="./icons/order-delivery.png" width="100" height="100" ></a></span><br>
+			 <span>View Orders</span>
+ 		</div>
+		 <div class="option" id="opt7">
+		<span><a href="./index.php"><img class="navIcon" src="./icons/clothes.png" width="100" height="100" ></a></span><br>
+			 <span>Go To Store</span>
+ 		</div>
+		 <div class="option" id="opt8">
+		 <span><a href="./processLogout.php"><img class="navIcon" src="./icons/logout.png" width="100" height="100" ></a></span><br>
+			 <span>Log Out</span>
  		</div>
  		<div id="foot"></div>
  	</div>

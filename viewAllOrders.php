@@ -17,12 +17,13 @@ $result = mysqli_query($conn,$sql);
     <div class="mainCatContainer">
         <div class ="mainCatForm">
             <h1>All Orders </h1>
-            <table class="userTable">
+            <table class="userTable" style="width: 750px;">
             	<thead>
             		<th>Order ID</th>
             		<th>User ID</th>
             		<th>Username</th>
-            		<th>Order Details</th>
+            		<th>Order Date</th>
+					<th>Status</th>
             		<th>Action</th>
             	</thead>
             	<tbody>
@@ -33,11 +34,18 @@ $result = mysqli_query($conn,$sql);
             	echo "<td>". $row["order_id"]."</td>";
             	echo "<td>". $row["user_id"]."</td>";
             	echo "<td>". $row["username"]."</td>";
-            	echo "<td>". $row["order_date"]."</td>";//Check Below
-            	echo "<td> <form action=\"order-details.php\" method=\"post\">
+            	echo "<td>". $row["order_date"]."</td>";
+				echo "<td>". $row["order_status"]."</td>";//Check Below
+            	echo "<td> 
+				<form action=\"order-details.php\" method=\"post\">
 				<input type=\"number\" name=\"order-id\" value=\"".$row["order_id"]."\" hidden>
 				<input type=\"submit\" value=\"Details\">
-				</form> </td>";
+				</form>
+				<form action=\"complete-order.php\" method=\"post\">
+				<input type=\"number\" name=\"order-id\" value=\"".$row["order_id"]."\" hidden>
+				<input type=\"submit\" value=\"Complete Order\">
+				</form>
+				 </td>";
             	echo "</tr>";
             	}
             ?>
