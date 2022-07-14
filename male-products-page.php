@@ -11,11 +11,11 @@ $_SESSION['current_page'] = "male-products-page";
 	</head>
 
 	<body>
-		<header>
+	<header>
 			<img id="mainIcon" src="./images/chopIcon.png">
 
 			<div id="trackOrderLink">
-			<a  href="./index.html">Track your order</a>
+			<a  href="./trackOrders.php">Track your order</a>
 		</div>
 
 			<div id="quickNavBar">
@@ -25,10 +25,13 @@ $_SESSION['current_page'] = "male-products-page";
 				<span class="username">
 					<?php
 						error_reporting(E_ALL ^ E_WARNING);
+						if($_SESSION['username']){
 						echo($_SESSION['username']);
-					
+						echo "<span class=\"username\"><a  href=\"./processLogout.php\">LogOut</a></span>";
+						}
 				?>
 				</span>
+				
 				
 			</div>
 

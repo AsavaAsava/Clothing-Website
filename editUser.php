@@ -44,6 +44,7 @@ $result = mysqli_query($conn,$sql);
                     echo "<br>";
                     echo "<input type=\"number\" name=\"role\" placeholder=\"role\" value= \"".$row['role']."\">";
                     echo "<br>";
+                    echo "<input type=\"number\" name=\"userID\" placeholder=\"role\" value= \"".$uid."\" hidden>";
                 }
                     ?>
                     <input type="submit" name="submit_Registration" value="Update">

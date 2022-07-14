@@ -1,6 +1,6 @@
 <?php 
 require("connect.php");
-$sql = "SELECT * from order_item  JOIN orders ON order_item.order_id = orders.order_id JOIN tbl_product ON order_item.product_id= tbl_product.product_id JOIN tbl_users ON tbl_users.user_id = orders.user_id";
+$sql = "SELECT * from orders JOIN tbl_users ON tbl_users.user_id = orders.user_id";
 $result = mysqli_query($conn,$sql);
 ?>
 <!DOCTYPE html>
@@ -15,6 +15,7 @@ $result = mysqli_query($conn,$sql);
     </header>
 
     <div class="mainCatContainer">
+	<a href="./adminLanding.php">Return to Dashboard</a>
         <div class ="mainCatForm">
             <h1>All Orders </h1>
             <table class="userTable" style="width: 750px;">
@@ -44,6 +45,10 @@ $result = mysqli_query($conn,$sql);
 				<form action=\"complete-order.php\" method=\"post\">
 				<input type=\"number\" name=\"order-id\" value=\"".$row["order_id"]."\" hidden>
 				<input type=\"submit\" value=\"Complete Order\">
+				</form>
+				<form action=\"remove-order.php\" method=\"post\">
+				<input type=\"number\" name=\"order-id\" value=\"".$row["order_id"]."\" hidden>
+				<input type=\"submit\" value=\"Remove Order\">
 				</form>
 				 </td>";
             	echo "</tr>";

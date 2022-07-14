@@ -1,22 +1,19 @@
-<?php
+<?php 
+session_start();
+$uid = $_SESSION['user_id'];
 require("connect.php");
- print_r($_POST);
- $orderID = $_POST['order-id'];
-
-$sql = "select product_name,product_image,quantity from order_item join orders on order_item.order_id = orders.order_id join tbl_product on 
-order_item.product_id = tbl_product.product_id where order_item.order_id = ".$orderID;
-
+$sql = "SELECT * from orders JOIN tbl_users ON tbl_users.user_id = orders.user_id WHERE order_status = 'Pending' AND orders.user_id =". $uid;
 $result = mysqli_query($conn,$sql);
-
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Order Details</title>
-	<link rel="stylesheet" href="formstyling.css">
-</head>
-<body>
-<header>
+	<head>
+		<title>ChopCloth Shop</title>
+		<link rel="stylesheet" href="formStyling.css">
+	</head>
+
+	<body>
+	<header>
 			<img id="mainIcon" src="./images/chopIcon.png">
 
 			<div id="trackOrderLink">
@@ -48,30 +45,42 @@ $result = mysqli_query($conn,$sql);
 			</nav>
 		</header>
 
-    <div class="mainCatContainer">
+
+
+    	<div class="mainCatContainer">
         <div class ="mainCatForm">
-            <h1>Order Details</h1>
-            <table class="cartTable" style="width: 600px;">
+            <h1>My Pending Orders </h1>
+            <table class="userTable" style="width: 750px;">
             	<thead>
-                    <th>Product Image</th>
-            		<th>Product Name</th>
-            		<th>Quantity</th>
+            		<th>Order ID</th>
+            		<th>User ID</th>
+            		<th>Username</th>
+            		<th>Date Placed</th>
+                    <th>Status</th>
+            		<th>Action</th>
             	</thead>
             	<tbody>
             <?php
-            while($value = mysqli_fetch_assoc($result)){
+            while($row = mysqli_fetch_assoc($result)){
+
             	echo "<tr>";
-            	echo "<td> <img src= \"". $value["product_image"]."\"width=\"100\" height=\"90\"></td>";
-            	echo "<td>". $value["product_name"]."</td>";
-            	echo "<td>". $value["quantity"]."</td>";
+            	echo "<td>". $row["order_id"]."</td>";
+            	echo "<td>". $row["user_id"]."</td>";
+            	echo "<td>". $row["username"]."</td>";
+            	echo "<td>". $row["order_date"]."</td>";
+                echo "<td>". $row["order_status"]."</td>";//Check Below
+            	echo "<td> 
+				<form action=\"order-details.php\" method=\"post\">
+				<input type=\"number\" name=\"order-id\" value=\"".$row["order_id"]."\" hidden>
+				<input type=\"submit\" value=\"Details\">
+				</form>
+				 </td>";
             	echo "</tr>";
             	}
             ?>
             </tbody>
-			
             </table>
-		
         </div>
     </div>
-</body>
+		</body>
 </html>

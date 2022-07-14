@@ -2,22 +2,22 @@
 session_start();
 $uid = $_SESSION['user_id'];
 require("connect.php");
-$sql = "SELECT * from order_item  JOIN orders ON order_item.order_id = orders.order_id JOIN tbl_product ON order_item.product_id= tbl_product.product_id JOIN tbl_users ON tbl_users.user_id = orders.user_id WHERE orders.user_id = ". $uid;
+$sql = "SELECT * from orders JOIN tbl_users ON tbl_users.user_id = orders.user_id WHERE order_status = 'Complete' AND orders.user_id =". $uid;
 $result = mysqli_query($conn,$sql);
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>ChopCloth Shop</title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="formStyling.css">
 	</head>
 
 	<body>
-		<header>
+	<header>
 			<img id="mainIcon" src="./images/chopIcon.png">
 
 			<div id="trackOrderLink">
-			<a  href="./index.html">Track your order</a>
+			<a  href="./trackOrders.php">Track your order</a>
 		</div>
 
 			<div id="quickNavBar">
@@ -27,10 +27,13 @@ $result = mysqli_query($conn,$sql);
 				<span class="username">
 					<?php
 						error_reporting(E_ALL ^ E_WARNING);
+						if($_SESSION['username']){
 						echo($_SESSION['username']);
-					
+						echo "<span class=\"username\"><a  href=\"./processLogout.php\">LogOut</a></span>";
+						}
 				?>
 				</span>
+				
 				
 			</div>
 
@@ -41,20 +44,18 @@ $result = mysqli_query($conn,$sql);
 				<a href="./kids-products-page.php">Kids</a>
 			</nav>
 		</header>
-<body>
-	<header>
- 		<img id="mainIcon" src="./images/chopIcon.png">
-    </header>
 
-    <div class="mainCatContainer">
+
+
+    	<div class="mainCatContainer">
         <div class ="mainCatForm">
-            <h1>All Orders </h1>
+            <h1>My Complete Orders </h1>
             <table class="userTable" style="width: 750px;">
             	<thead>
             		<th>Order ID</th>
             		<th>User ID</th>
             		<th>Username</th>
-            		<th>Order Details</th>
+            		<th>Date Placed</th>
                     <th>Status</th>
             		<th>Action</th>
             	</thead>
@@ -81,5 +82,5 @@ $result = mysqli_query($conn,$sql);
             </table>
         </div>
     </div>
-</body>
+		</body>
 </html>

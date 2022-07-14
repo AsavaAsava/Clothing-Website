@@ -16,11 +16,14 @@ while($row = mysqli_fetch_assoc($result)){$orderID = $row['order_id'];}
 
 foreach($cartItems as $item){
     $pid = $item['product_id'];
-    $createOrderItem = "INSERT INTO  order_item (order_id,product_id,quantity) VALUES ('$orderID','$pid',1)";
+    $createOrderItem = "INSERT INTO  order_item (order_id,product_id,quantity) VALUES ('$orderID','$pid',$quantity)";
     mysqli_query($conn,$createOrderItem);
+    
 }
-
+$removeFromCart = "DELETE FROM tbl_cart WHERE u_id= ".$uid;
+mysqli_query($conn,$removeFromCart);
 echo("Order Successful");
+header('Location: http://localhost/webDev_project/index.php');
 
 
 ?>

@@ -27,11 +27,11 @@ while($row = mysqli_fetch_assoc($result)){
 	</head>
 
 	<body>
-		<header>
+	<header>
 			<img id="mainIcon" src="./images/chopIcon.png">
 
 			<div id="trackOrderLink">
-			<a  href="./index.html">Track your order</a>
+			<a  href="./trackOrders.php">Track your order</a>
 		</div>
 
 			<div id="quickNavBar">
@@ -41,10 +41,13 @@ while($row = mysqli_fetch_assoc($result)){
 				<span class="username">
 					<?php
 						error_reporting(E_ALL ^ E_WARNING);
+						if($_SESSION['username']){
 						echo($_SESSION['username']);
-					
+						echo "<span class=\"username\"><a  href=\"./processLogout.php\">LogOut</a></span>";
+						}
 				?>
 				</span>
+				
 				
 			</div>
 
@@ -86,7 +89,7 @@ while($row = mysqli_fetch_assoc($result)){
             </tbody>
 			
             </table>
-			<span id="cart-subtotal">Subtotal:<?php echo $subtotal;?><span><br>
+			<span id="cart-subtotal"><?php echo "Subtotal:". $subtotal;?><span><br>
 			<form action="submitOrder.php" method="post">
 				<input type="number" name="uid" value="<?php echo $_SESSION['user_id']?>" hidden>
 				<input id = "item-quantity" type= "number" name="quantity" value="1" hidden>
@@ -98,6 +101,8 @@ while($row = mysqli_fetch_assoc($result)){
 <script>
 	document.querySelector("#quantity").addEventListener("change", () => {
 	document.querySelector("#item-quantity").value = document.querySelector("#quantity").value
+	//document.querySelector("#cart-subtotal").innerHTML= parseInt(document.querySelector("#quantity").value)*parseInt(document.querySelector("#cart-subtotal").innerHTML)
+	
 	})
 </script>
 </html>

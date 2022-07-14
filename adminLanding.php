@@ -13,7 +13,8 @@
  <div id="mainArea">
  	
  	<div id= "statisticsBanner">
- 		
+ 		<h1><?php session_start(); error_reporting(E_ALL ^ E_WARNING); 
+		echo "Welcome ".$_SESSION['username'];?></h1>
  	</div>
  	<div id="optionsArea">
  		<div class="option" id="opt1">
@@ -43,7 +44,7 @@
 			 <span>View Orders</span>
  		</div>
 		 <div class="option" id="opt7">
-		<span><a href="./index.php"><img class="navIcon" src="./icons/clothes.png" width="100" height="100" ></a></span><br>
+		<span><a href="./index.php" target="_blank"><img class="navIcon" src="./icons/clothes.png" width="100" height="100" ></a></span><br>
 			 <span>Go To Store</span>
  		</div>
 		 <div class="option" id="opt8">

@@ -6,6 +6,7 @@ require_once("selectSubCategories.php");
 $pid=$_POST["product"];
 $sql2 = "SELECT * FROM tbl_product WHERE product_id = '$pid'";
 
+
 $result2 = mysqli_query($conn,$sql2);
 ?>
 <!DOCTYPE html>
