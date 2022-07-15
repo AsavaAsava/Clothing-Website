@@ -23,7 +23,7 @@ foreach($cartItems as $item){
 $removeFromCart = "DELETE FROM tbl_cart WHERE u_id= ".$uid;
 mysqli_query($conn,$removeFromCart);
 echo("Order Successful");
-header('Location: http://localhost/webDev_project/index.php');
+header('Location: http://localhost/webDev_project/trackOrders.php');
 
 
 ?>

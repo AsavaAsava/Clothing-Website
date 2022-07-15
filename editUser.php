@@ -25,6 +25,7 @@ $result = mysqli_query($conn,$sql);
         </header>
 
     <div class="mainContainer">
+    <a href="./adminLanding.php">Return to Dashboard</a>
         <div class ="mainForm">
             <h1>Edit User</h1>
                 <form action="./process_editUser.php" method = "POST">

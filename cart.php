@@ -89,7 +89,7 @@ while($row = mysqli_fetch_assoc($result)){
             </tbody>
 			
             </table>
-			<span id="cart-subtotal"><?php echo "Subtotal:". $subtotal;?><span><br>
+			<span id="cart-subtotal"><h3><?php echo "Subtotal: Ksh.". $subtotal;?></h3><span><br>
 			<form action="submitOrder.php" method="post">
 				<input type="number" name="uid" value="<?php echo $_SESSION['user_id']?>" hidden>
 				<input id = "item-quantity" type= "number" name="quantity" value="1" hidden>

@@ -13,6 +13,7 @@ require_once("get_Products.php");
     </header>
 
     <div class="mainCatContainer">
+	<a href="./adminLanding.php">Return to Dashboard</a>
         <div class ="mainCatForm">
             <h1>All Products </h1>
             <table class="userTable">
@@ -41,6 +42,10 @@ require_once("get_Products.php");
 				<form action=\"editProduct.php\" method=\"post\">
 				<input type=\"number\" name=\"product\" value=\"".$row["product_id"]."\" hidden>
 				<input type=\"submit\" value=\"Edit\">
+				</form>
+				<form action=\"removeProduct.php\" method=\"post\">
+				<input type=\"number\" name=\"product\" value=\"".$row["product_id"]."\" hidden>
+				<input type=\"submit\" value=\"Delete\">
 				</form> 
 				
 				</td>";

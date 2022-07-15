@@ -13,6 +13,7 @@ require_once("selectSubCategories.php");
     </header>
 
     <div class="mainCatContainer">
+    <a href="./adminLanding.php">Return to Dashboard</a>
         <div class ="mainForm">
             <h1>Add Product</h1>
                 <form action="./process_addProduct.php" method = "POST" enctype="multipart/form-data">

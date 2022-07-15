@@ -13,6 +13,7 @@ require_once("get_userData.php");
     </header>
 
     <div class="mainCatContainer">
+	<a href="./adminLanding.php">Return to Dashboard</a>
         <div class ="mainCatForm">
             <h1>All Users </h1>
             <table class="userTable">

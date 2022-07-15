@@ -11,6 +11,7 @@
 
     <div class="mainCatContainer">
         <div class ="mainCatForm">
+        <a href="./adminLanding.php">Return to Dashboard</a>
             <h1>Add Category</h1>
                 <form action="./process_addCategory.php" method = "POST">
  	              <input type="text" name="categoryName" placeholder="Enter Category name">

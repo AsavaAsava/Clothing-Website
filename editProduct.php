@@ -21,6 +21,7 @@ $result2 = mysqli_query($conn,$sql2);
     </header>
 
     <div class="mainCatContainer">
+    <a href="./adminLanding.php">Return to Dashboard</a>
         <div class ="mainForm">
             <h1>Edit Product</h1>
                 <form action="./process_editProduct.php" method = "POST" enctype="multipart/form-data">

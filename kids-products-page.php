@@ -8,12 +8,13 @@ require_once("get-kids-products.php");
 		<link rel="stylesheet" href="style.css">
 	</head>
 
+	
 	<body>
-		<header>
+	<header>
 			<img id="mainIcon" src="./images/chopIcon.png">
 
 			<div id="trackOrderLink">
-			<a  href="./index.html">Track your order</a>
+			<a  href="./trackOrders.php">Track your order</a>
 		</div>
 
 			<div id="quickNavBar">
@@ -23,10 +24,13 @@ require_once("get-kids-products.php");
 				<span class="username">
 					<?php
 						error_reporting(E_ALL ^ E_WARNING);
+						if($_SESSION['username']){
 						echo($_SESSION['username']);
-					
+						echo "<span class=\"username\"><a  href=\"./processLogout.php\">LogOut</a></span>";
+						}
 				?>
 				</span>
+				
 				
 			</div>
 
@@ -35,29 +39,6 @@ require_once("get-kids-products.php");
 				<a href="./male-products-page.php">Men</a>
 				<a href="./female-products-page.php">Women</a>
 				<a href="./kids-products-page.php">Kids</a>
-			</nav>
-		</header>
-
-	<body>
-		<header>
-			<img id="mainIcon" src="./images/chopIcon.png">
-
-			<div id="trackOrderLink">
-			<a  href="./index.html">Track your order</a>
-		</div>
-
-			<div id="quickNavBar">
-				<a href="./index.html"><img class="navIcon" src="./icons/wishlist.png"></a>
-				<a href="./cart.php"><img class="navIcon" src="./icons/cart.png" ></a>
-				<a href="./login.php"><img class="navIcon" src="./icons/user.png" ></a>
-			</div>
-
-			<nav id="topNavLinks">
-				<a href="./index.html">Home</a>
-				<a href="./index.html">Men</a>
-				<a href="./index.html">Women</a>
-				<a href="./index.html">Kids</a>
-				<a href="./index.html">Offers</a>
 			</nav>
 		</header>
 		<?php
